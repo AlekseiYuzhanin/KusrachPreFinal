@@ -5,7 +5,10 @@
             <h1>Information about User</h1>
           </div>
           <div class="maincabinet_user_nfo_data">
-
+            <div>
+              {{userInfo}}
+              {{userInfo}}
+            </div>
           </div>
        </div>
       <div>
@@ -24,7 +27,12 @@
 <script>
 
 export default{
-   
+props:{
+ userInfo:{
+   type:Array,
+   required:true
+ }
+}
 }
 </script>
 
@@ -34,5 +42,6 @@ export default{
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 </style>

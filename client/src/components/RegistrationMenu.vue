@@ -72,6 +72,7 @@
   <style scoped>
   .padder{
     padding-top: 200px;
+
   }
   @import "@/css/bootstrap.min.css";
   </style>

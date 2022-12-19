@@ -9,10 +9,10 @@
         <p>The best brewery db in the world</p>
       </div>
     </div>
-    <div class="brew__header_navbar">
+    <nav class="brew__header_navbar">
       <a href="#alcaholicProducts">Alcoholic cocktails</a>
       <a href="#nonAlcaholicProducts">Non Alcoholic cocktails</a>
-    </div>
+    </nav>
     <div class="brew__header_authentication">
       <div class="brew__header_authentication_auth" v-if="token" @click="toggleToken">
         <router-link style="text-decoration: none; color: inherit;" to="/login">Login</router-link>
@@ -28,11 +28,13 @@
   
     <slot></slot>
 
-    <footer class="footer">
-    <div class="footer">
-        123
+  <footer class="footer">
+    <div class="footer_data">
+      <p><router-link style="text-decoration: none; color: inherit;" to="/aboutUs">About us</router-link></p>
+      <p><router-link style="text-decoration: none; color: inherit;" to="/contacts">Contacts</router-link></p>
+      <p><router-link style="text-decoration: none; color: inherit;" to="/informationList">What do we use?</router-link></p>
     </div>
-</footer>
+  </footer>
 </template>
 
   
@@ -105,4 +107,17 @@
     gap: 50px;
   }
 
+  .footer{
+    margin-top: 100px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+  }
+
+  .footer_data{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+  }
   </style>

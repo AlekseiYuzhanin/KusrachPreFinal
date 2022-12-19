@@ -28,6 +28,7 @@ export default {
   display: flex;
   flex-direction: column;
   font-size: 30px;
+
 }
 
 a{

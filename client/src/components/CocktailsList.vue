@@ -3,9 +3,22 @@
     <div class="breweryImage">
       <img src="@/assets/cm1-.png"/>
     </div>
+    <div class="Dismember">
+      <span class="lineDismember"></span>
+    </div>
+    <div class="randomCocktail">
+      <div class="randomCocktail_title">
+        <h2>If you dont know what to drink today</h2>
+        <p>{{randomData.strDrink}}</p>
+      </div>
+      <div class="randomCocktail_image" @click.stop="showAlcoholicDetails(randomData.idDrink);openDialog()">
+        <img :src="randomData.strDrinkThumb">
+      </div>
+    </div>
     <div class="manipulationElements">
       <div class="replaceInput">
-        <my-input placeholder="Enter cocktail title..." v-bind:value="searchQuery" @input="searchQuery = $event.target.value"></my-input>
+        <my-input placeholder="Enter cocktail title..." v-bind:value="searchQuery"
+                  @input="searchQuery = $event.target.value"></my-input>
       </div>
     </div>
     <div class="alcoholicProducts" id="alcaholicProducts">
@@ -17,18 +30,18 @@
       </div>
       <div class="wrapper">
         <transition-group name="cocktails">
-          <div v-for="product in searchAlcoholCocktails" :key="product.idDrink" class="doubleWrapper" >
+          <div v-for="product in searchAlcoholCocktails" :key="product.idDrink" class="doubleWrapper">
             <div @click.stop="showAlcoholicDetails(product.idDrink);openDialog()">
               <div class="alcoholicImage">
                 <img :src="product.strDrinkThumb">
               </div>
               <div class="alcoholicText">
-                <p>{{product.strDrink}}</p>
+                <p>{{ product.strDrink }}</p>
                 <filter-button @click.stop="add">Добавить в любимое</filter-button>
               </div>
-              <product-details-modal v-model:show="dialogVisible" :key="detail" :product="product">
-                <p>{{product.strDrink}}</p>
-                <img :src="product.strDrinkThumb"/>
+              <product-details-modal  v-model:show="dialogVisible" :key="detail">
+                <p>{{ details.strDrink }}</p>
+                <img :src="details.strDrinkThumb"/>
               </product-details-modal>
             </div>
           </div>
@@ -50,12 +63,77 @@
                 <img :src="product.strDrinkThumb">
               </div>
               <div class="alcoholicText">
-                <p>{{product.strDrink}}</p>
+                <p>{{ product.strDrink }}</p>
                 <filter-button @click.stop="add">Добавить в любимое</filter-button>
               </div>
-              <product-details-modal v-model:show="dialogVisible" :key="detail" :product="product">
-                <p>{{product.strDrink}}</p>
-                <img :src="product.strDrinkThumb"/>
+              <product-details-modal  v-model:show="dialogVisible" :key="detail" :product="product">
+                <div class="modalWindowCocktailsInformation">
+                  <div class="modalWindowCocktailsInformation_introduction">
+                    <div class="modalWindowCocktailsInformation_introduction_title">
+                      <h1>{{ details.strDrink }}</h1>
+                    </div>
+                    <div class="modalWindowCocktailsInformation_introduction_title">
+                      <img :src="details.strDrinkThumb">
+                    </div>
+                    <div class="modalWindowCocktailsInformation_introduction_type_and_serve">
+                      <div class="modalWindowCocktailsInformation_introduction_type_and_serve_type">
+                        <p>Type: {{details.strAlcoholic}}</p>
+                      </div>
+                      <div class="modalWindowCocktailsInformation_introduction_type_and_serve_serve">
+                        <p>Serve in : {{details.strGlass}}</p>
+                      </div>
+                    </div>
+                  </div>
+                <div class="modalWindowCocktailsInformation_usage">
+                  <div class="modalWindowCocktailsInformation_ingridients">
+                    <div class="modalWindowCocktailsInformation_ingridients_title">
+                      <h2>Ingredients</h2>
+                    </div>
+                    <div class="modalWindowCocktailsInformation_ingridients_names">
+                      <p>{{ details.strIngredient1 }}</p>
+                      <p>{{ details.strIngredient2 }}</p>
+                      <p>{{ details.strIngredient3 }}</p>
+                      <p>{{ details.strIngredient4 }}</p>
+                      <p>{{ details.strIngredient5 }}</p>
+                      <p>{{ details.strIngredient6 }}</p>
+                      <p>{{ details.strIngredient7 }}</p>
+                      <p>{{ details.strIngredient8 }}</p>
+                      <p>{{ details.strIngredient9 }}</p>
+                      <p>{{ details.strIngredient10 }}</p>
+                      <p>{{ details.strIngredient11 }}</p>
+                      <p>{{ details.strIngredient12 }}</p>
+                      <p>{{ details.strIngredient13 }}</p>
+                      <p>{{ details.strIngredient14 }}</p>
+                      <p>{{ details.strIngredient15 }}</p>
+                    </div>
+                  </div>
+                  <div class="modalWindowCocktailsInformation_measures">
+                    <div class="modalWindowCocktailsInformation_measures_title">
+                      <h2>Measures</h2>
+                    </div>
+                    <div class="modalWindowCocktailsInformation_measures_names">
+                      <p>{{ details.strMeasure1 }}</p>
+                      <p>{{ details.strMeasure2 }}</p>
+                      <p>{{ details.strMeasure3 }}</p>
+                      <p>{{ details.strMeasure4 }}</p>
+                      <p>{{ details.strMeasure5 }}</p>
+                      <p>{{ details.strMeasure6 }}</p>
+                      <p>{{ details.strMeasure7 }}</p>
+                      <p>{{ details.strMeasure8 }}</p>
+                      <p>{{ details.strMeasure9 }}</p>
+                      <p>{{ details.strMeasure10 }}</p>
+                      <p>{{ details.strMeasure11 }}</p>
+                      <p>{{ details.strMeasure12 }}</p>
+                      <p>{{ details.strMeasure13 }}</p>
+                      <p>{{ details.strMeasure14 }}</p>
+                      <p>{{ details.strMeasure15 }}</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="modalWindowCocktailsInformation_instruction">
+                  <p>Instruction : {{details.strInstructions}}</p>
+                </div>
               </product-details-modal>
             </div>
           </div>
@@ -86,7 +164,8 @@ export default {
       showModal: false,
       detail: null,
       details: [],
-      searchQuery: ''
+      searchQuery: '',
+      randomData: []
     };
   },
   methods: {
@@ -108,8 +187,8 @@ export default {
     async showAlcoholicDetails(id) {
       try {
         const responseDetails = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
-        this.details = responseDetails.data.drinks;
-        console.log(responseDetails.data.drinks);
+        this.details = responseDetails.data.drinks[0];
+        console.log(responseDetails.data.drinks[0]);
       } catch (e) {
         console.log(e);
       }
@@ -122,10 +201,22 @@ export default {
         console.log(e)
       }
     },
+    async lookupRandomCocktail(){
+      try {
+        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+        this.randomData = response.data.drinks[0];
+        console.log(this.randomData);
+      }
+      catch(e){
+        console.log(e);
+      }
+    }
   },
   mounted() {
     this.showAlcoholicProducts();
     this.showNonAlcoholicProducts();
+    this.showAlcoholicDetails();
+    this.lookupRandomCocktail();
   },
   computed: {
     searchAlcoholCocktails() {
@@ -159,6 +250,24 @@ export default {
   padding-top: 200px;
   display: flex;
   justify-content: center;
+
+}
+.randomCocktail{
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.randomCocktail_title{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.randomCocktail img{
+  width: 500px;
+  height: 500px;
 }
 
 .nonAlcoholProducts {
@@ -283,5 +392,47 @@ export default {
   justify-content: flex-end;
   padding-top: 100px;
   padding-right: 200px;
+}
+
+.modalWindowCocktailsInformation {
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+
+.modalWindowCocktailsInformation_introduction_title {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalWindowCocktailsInformation_introduction{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 26px;
+}
+
+.modalWindowCocktailsInformation_introduction_title img {
+  width: 500px;
+  height: 500px;
+}
+
+.modalWindowCocktailsInformation_usage{
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
+
+.modalWindowCocktailsInformation_introduction_type_and_serve{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding-left: 50px;
+}
+
+.modalWindowCocktailsInformation_instruction{
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

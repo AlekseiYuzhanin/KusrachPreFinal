@@ -18,10 +18,6 @@ export default {
   show:{
     type: Boolean,
     default: false
-  },
-  product:{
-    type: Object,
-    required: true
   }
 },
   methods:{
@@ -39,7 +35,7 @@ export default {
   right: 0;
   left: 0;
   bottom:0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.8);
   position: fixed;
   display:flex;
 }
@@ -48,8 +44,8 @@ export default {
   margin: auto;
   background: white;
   min-height: 50px;
-  min-width: 300px;
-  padding: 20px;
+  min-width: 1400px;
+  padding: 40px;
   border-radius: 15px;
 }
 </style>

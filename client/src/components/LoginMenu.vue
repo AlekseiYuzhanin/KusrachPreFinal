@@ -34,6 +34,7 @@
         <p style="font-size: 25px">Continue to using our site</p>
         <a><router-link style="font-size: 25px; text-decoration: none;color: #000;text-decoration: underline" to="/mainCabinet">Main cabinet</router-link></a>
         <a><router-link style="font-size: 25px; text-decoration: none;color: #000;text-decoration: underline" to="/">Home page</router-link></a>
+        <main-cabinet :user-info="userInfo"></main-cabinet>
       </div>
     </div>
     </div>
@@ -41,12 +42,16 @@
   
  <script>
   import axios from "axios";
-
+  import mainCabinet from "@/components/MainCabinet";
   export default {
+    components:{
+      mainCabinet
+    },
     data(){
       return{
         userLogin : '',
         userPassword : '',
+        userInfo: [],
         isLoaded: false,
         token: ''
       }
@@ -58,6 +63,8 @@
         })
         console.log(response.data.token);
         this.token = response.data.token;
+        this.userInfo = [this.userLogin,this.userPassword]
+        console.log(this.userInfo[0],this.userInfo[1])
         localStorage.setItem('token',this.token);
         if(this.token){
           this.isLoaded = true;
@@ -75,6 +82,7 @@
   <style scoped>
   .padder{
     padding-top: 200px;
+
   }
   @import "@/css/bootstrap.min.css";
   </style>

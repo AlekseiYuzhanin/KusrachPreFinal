@@ -4,6 +4,10 @@ import LoginMenu from "@/components/LoginMenu"
 import MainCabinet from "@/components/MainCabinet"
 import RegistrationMenu from "@/components/RegistrationMenu"
 import NotFound from "@/components/NotFound";
+import AboutUs from "@/components/AboutUs";
+import ContactUs from "@/components/ContactUs";
+import InformationList from "@/components/InformationList";
+
 
 const routes = [
     {
@@ -25,6 +29,18 @@ const routes = [
     {
         path: "/mainCabinet",
         component: MainCabinet
+    },
+    {
+        path: "/aboutUs",
+        component: AboutUs
+    },
+    {
+        path: "/contacts",
+        component: ContactUs
+    },
+    {
+        path: "/informationList",
+        component: InformationList
     }
 ];
 
