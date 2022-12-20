@@ -14,11 +14,8 @@
       <a href="#nonAlcaholicProducts">Non Alcoholic cocktails</a>
     </nav>
     <div class="brew__header_authentication">
-      <div class="brew__header_authentication_auth" v-if="token" @click="toggleToken">
+      <div class="brew__header_authentication_auth" >
         <router-link style="text-decoration: none; color: inherit;" to="/login">Login</router-link>
-      </div>
-      <div class="brew__header_authentication_auth_else" v-else>
-        <router-link to="/login"><img src="https://www.transparentpng.com/thumb/user/single-user-icon-png-free--rLHSHx.png" style="width: 40px"/></router-link>
       </div>
       <div class="brew__header_registration">
         <router-link style="text-decoration: none; color: inherit;" to="registration">Registration</router-link>
