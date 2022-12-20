@@ -246,6 +246,10 @@ export default {
 </script>
 
 <style scoped>
+.mainDiv{
+  scroll-behavior: smooth;
+}
+
 .breweryImage {
   padding-top: 200px;
   display: flex;
@@ -310,7 +314,7 @@ export default {
 .NonAlcohol-doubleWrapper {
   padding-top: 40px;
   width: 250px;
-  height: 350px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -367,7 +371,7 @@ export default {
 .doubleWrapper {
   padding-top: 40px;
   width: 250px;
-  height: 350px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -382,6 +386,11 @@ export default {
   width: 200px;
   height: 200px;
 }
+
+.alcoholicText{
+  padding-top: 20px;
+}
+
 
 .cocktails-list-item {
   display: inline-block;
