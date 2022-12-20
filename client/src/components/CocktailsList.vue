@@ -37,7 +37,7 @@
               </div>
               <div class="alcoholicText">
                 <p>{{ product.strDrink }}</p>
-                <filter-button class="btn" @click.stop="add">Добавить в любимое</filter-button>
+                <filter-button class="btn" @click.stop="add">Add to favorite</filter-button>
               </div>
               <product-details-modal  v-model:show="dialogVisible" :key="detail">
                 <p>{{ details.strDrink }}</p>
@@ -64,7 +64,7 @@
               </div>
               <div class="alcoholicText">
                 <p>{{ product.strDrink }}</p>
-                <filter-button class="btn" @click.stop="add">Добавить в любимое</filter-button>
+                <filter-button class="btn" @click.stop="add">Add to favorite</filter-button>
               </div>
               <product-details-modal  v-model:show="dialogVisible" :key="detail" :product="product">
                 <div class="modalWindowCocktailsInformation">
