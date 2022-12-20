@@ -51,6 +51,8 @@ class AuthController{
             }
             const token = generateAccessToken(user._id,user.roles)
             return res.json({token})
+            res.cookie('sessionCookieName', token, {httpOnly: true})
+            res.status(200).json({ success: true })
         }
         catch(e){
             console.log(e)

@@ -37,7 +37,7 @@
               </div>
               <div class="alcoholicText">
                 <p>{{ product.strDrink }}</p>
-                <filter-button @click.stop="add">Добавить в любимое</filter-button>
+                <filter-button class="btn" @click.stop="add">Добавить в любимое</filter-button>
               </div>
               <product-details-modal  v-model:show="dialogVisible" :key="detail">
                 <p>{{ details.strDrink }}</p>
@@ -64,7 +64,7 @@
               </div>
               <div class="alcoholicText">
                 <p>{{ product.strDrink }}</p>
-                <filter-button @click.stop="add">Добавить в любимое</filter-button>
+                <filter-button class="btn" @click.stop="add">Добавить в любимое</filter-button>
               </div>
               <product-details-modal  v-model:show="dialogVisible" :key="detail" :product="product">
                 <div class="modalWindowCocktailsInformation">
@@ -293,6 +293,18 @@ export default {
   padding-right: 5%;
   text-align: center;
 
+}
+
+.btn{
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: none;
+  color: teal;
+  border: 1px solid teal;
+}
+
+.btn:hover{
+  color: red;
 }
 
 .NonAlcohol-doubleWrapper {

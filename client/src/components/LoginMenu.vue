@@ -1,7 +1,7 @@
 <template>
     <div class="padder">
     <div class="container py-3">
-      <div v-if="token == false">
+      <div v-if="isLoaded == false">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
         <h1 class="display-4 fw-normal">Login</h1>
       </div>
